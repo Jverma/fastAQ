@@ -7,7 +7,8 @@ sys.path.insert(0,'fastAQ')
 
 sys.path.pop(0)
 
-packages = ['fastAQ']
+packages = ['fastAQ',
+            'fastAQ.commandLineTools']
 
 setup(
     name='fastaq',
