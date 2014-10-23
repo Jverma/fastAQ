@@ -11,8 +11,8 @@ fastAQ is a fast and super lightweight package for working with FASTA/FASTQ sequ
 
 <b>Install</b> :
 
-              pip install fastaq 
-          or  python setup.py develop
+             python setup.py develop 
+        or   pip install fastaq
                 
 
 <b>Dependencies</b> : None
