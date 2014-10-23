@@ -189,6 +189,7 @@ class FastaParser:
 			x = seqDict.keys()[i]
 			interval = intervals[i]
 			print self.maskSeq(x, interval, toLower=False, maskingChar='N')
+		return ''	
 
 
 
@@ -210,6 +211,7 @@ class FastaParser:
 			x = seqDict.keys()[i]
 			interval = intervals[i]
 			print self.trimSeq(x, interval, quality = None)
+		return ''	
 
 
 
@@ -231,6 +233,7 @@ class FastaParser:
 		for i in range(len(seqDict.keys())):
 			x = seqDict.keys()[i]
 			print self.reverseComplement(x)
+		return ''	
 
 
 
