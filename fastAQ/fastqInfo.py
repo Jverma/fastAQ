@@ -176,6 +176,7 @@ class FastqParser:
 			x = seqDict.keys()[i]
 			interval = intervals[i]
 			print self.maskSeq(x, interval, toLower=False, maskingChar='N')
+		return ''	
 	
 
 
@@ -197,6 +198,7 @@ class FastqParser:
 			x = seqDict.keys()[i]
 			interval = intervals[i]
 			print self.trimSeq(x, qualityCutOff=0, byInterval=False, interval=None, mott=False, limitValue=None)
+		return ''	
 
 
 	def reverseComplement(self, nameSeq):
@@ -233,7 +235,8 @@ class FastqParser:
 		seqDict = self.sequenceDict()
 		for i in range(len(seqDict.keys())):
 			x = seqDict.keys()[i]
-			print self.reverseComplement(x)	
+			print self.reverseComplement(x)
+		return ''	
 
 
 
