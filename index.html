@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Fastaq by Jverma</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Fastaq</h1>
+        <p>fastAQ is a fast and super lightweight package for working with FASTA/FASTQ sequences. </p>
+
+        <p class="view"><a href="https://github.com/Jverma/fastAQ">View the Project on GitHub <small>Jverma/fastAQ</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/Jverma/fastAQ/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/Jverma/fastAQ/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/Jverma/fastAQ">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="fastaq" class="anchor" href="#fastaq" aria-hidden="true"><span class="octicon octicon-link"></span></a>fastAQ</h1>
+
+<p>fastAQ is a fast and super lightweight package for working with FASTA/FASTQ sequences. </p>
+
+<p><b>Download</b> : </p>
+
+<pre><code>    git clone https://github.com/Jverma/fastAQ
+or  https://pypi.python.org/pypi/fastaq
+</code></pre>
+
+<p><b>Install</b> :</p>
+
+<pre><code>         python setup.py develop 
+    or   pip install fastaq
+</code></pre>
+
+<p><b>Dependencies</b> : None</p>
+
+<p><b>Documentation</b> : <a href="https://pythonhosted.org/fastaq/">https://pythonhosted.org/fastaq/</a></p>
+
+<p><b>Command line Usage:</b></p>
+
+<pre><code>git clone https://github.com/Jverma/fastAQ
+</code></pre>
+
+<p>Notation/Variables:</p>
+
+<pre><code>location = location of the fastAQ folder on your computer.
+fasta = location/fastAQ/fastAQ/commandLineTools/fasta.py
+fastq = location/fastAQ/fastAQ/commandLineTools/fasta.py
+fastq2fasta = location/fastAQ/fastAQ/commandLineTools/fastq2fasta.py
+</code></pre>
+
+<p>Conver a FASTQ file into a FASTA file</p>
+
+<pre><code>python $fastq2fasta input_file.fastq 
+</code></pre>
+
+<p>List containing the names/headers of all the sequences in the FASTA/Q file.</p>
+
+<pre><code>python $fasta input_file.fasta -seqNames 
+python $fastq input_file.fastq -seqNames
+</code></pre>
+
+<p>Sequences corresponding to the names/headers in a text file. </p>
+
+<pre><code>python $fasta input_file.fasta -seq names_file.txt
+python $fastq input_file.fastq -seq names_file.txt
+</code></pre>
+
+<p>Qualities of the sequences corresponding to the names/headers in a text file.</p>
+
+<pre><code>python $fastq input_file.fastq -qual names_file.txt
+</code></pre>
+
+<p>Trim sequences corresponding to the names in a text file according to the intervals in another file. </p>
+
+<pre><code>python $fasta input_file.fasta -trim names_file.txt interval_file.txt
+python $fastq input_file.fastq -trim names_file.txt interval_file.txt
+</code></pre>
+
+<p>Mask sequences corresponding to the names in a text file according to the intervals in another file.</p>
+
+<pre><code>python $fasta input_file.fasta -mask names_file.txt interval_file.txt
+python $fastq input_file.fastq -mask names_file.txt interval_file.txt
+</code></pre>
+
+<p>Reverse Complement sequences corresponding to the names in a text file. </p>
+
+<pre><code>python $fasta input_file.fasta -reverseComplement names_file.txt
+python $fastq input_file.fastq -reverseComplement names_file.txt
+</code></pre>
+
+<p>Reverse Complement all the sequences in the given file. </p>
+
+<pre><code>python $fasta input_file.fasta -reverseComplementAll
+python $fastq input_file.fastq -reverseComplementAll
+</code></pre>
+
+<p>Trim all the sequences in the given file (remove intervalStart bases from left and intervalEnd bases from right). </p>
+
+<pre><code>python $fasta input_file.fasta -trimAll -intervalStart=1 -intervalEnd=5
+python $fastq input_file.fastq -trimAll -intervalStart=1 -intervalEnd=5
+</code></pre>
+
+<p>Mask all the sequences in the given file (masks intervalStart bases from left and intervalEnd bases from right). </p>
+
+<pre><code>python $fasta input_file.fasta -maskAll -intervalStart=1 -intervalEnd=5
+python $fastq input_file.fastq -maskAll -intervalStart=1 -intervalEnd=5
+</code></pre>
+
+<p>Trim FASTQ sequences in the file by removing low quality bases (quality &gt; qualityCutOff).</p>
+
+<pre><code>python $fastq input_file.fastq -trimLowQuality names_file.txt -qualityCutOff=30
+</code></pre>
+
+<p>Trim FASTQ sequences according to the Mott's algorithm (choose limitValue)</p>
+
+<pre><code>python $fastq input_file.fastq -mottTrim names_file.txt -limitValue=0.65
+</code></pre>
+
+<p>Trim all FASTQ sequences by removing low quality bases. </p>
+
+<pre><code>python $fastq input_file.fastq -trimAlllowQuality -qualityCutOff=30
+</code></pre>
+
+<p>Trim all FASTQ sequences by Mott's algorithm. </p>
+
+<pre><code>python $fastq input_file.fastq -mottTrimAll -limitValue=0.65
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/Jverma">Jverma</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
