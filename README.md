@@ -17,7 +17,7 @@ fastAQ is a fast and super lightweight package for working with FASTA/FASTQ sequ
 
 <b>Dependencies</b> : None
 
-<b>Documentation</b> : to be added.
+<b>Documentation</b> : https://pythonhosted.org/fastaq/
 
 <b>Command line Usage:</b>
 
